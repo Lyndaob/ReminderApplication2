@@ -1,18 +1,20 @@
 package com.example.lyndaob.reminderapplication;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
-import android.view.View.OnClickListener;
 
-import static android.R.attr.id;
-import static com.example.lyndaob.reminderapplication.R.id.button;
+public class LoginActivity extends AppCompatActivity {
 
-public class LoginActivity extends AppCompatActivity{
-
+    private FirebaseAuth firebaseAuth;
+    private FirebaseUser firebaseUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,24 +44,17 @@ public class LoginActivity extends AppCompatActivity{
     }
 
 
-
-
-
 }
 
 
+//b.setOnClickListener(new View.OnClickListener() {
+// @Override
+
+// Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+//    //    startActivity(intent);
 
 
-
-   //b.setOnClickListener(new View.OnClickListener() {
-       // @Override
-
-        // Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
-        //    //    startActivity(intent);
-
-
-
-         //   }
+//   }
 
 
 
