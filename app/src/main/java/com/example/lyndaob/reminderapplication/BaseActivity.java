@@ -115,4 +115,8 @@ public abstract class BaseActivity extends AppCompatActivity implements GoogleAp
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
         Toast.makeText(this, "Connection failed", Toast.LENGTH_SHORT).show();
     }
+
+    public String getFirebaseUserId() {
+        return FirebaseAuth.getInstance().getCurrentUser().getUid();
+    }
 }

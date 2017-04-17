@@ -21,7 +21,7 @@ public class HomeActivity extends BaseActivity {
         ReminderButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(HomeActivity.this, ReminderActivity.class);
+                Intent intent = new Intent(HomeActivity.this, NewReminderActivity.class);
                 startActivity(intent);
             }
         });
