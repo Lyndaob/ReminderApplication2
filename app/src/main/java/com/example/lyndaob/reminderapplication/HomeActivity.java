@@ -1,7 +1,6 @@
 package com.example.lyndaob.reminderapplication;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -19,63 +18,45 @@ public class HomeActivity extends BaseActivity {
         Button NoteButton = (Button) findViewById(R.id.NteBtn);
         Button PeerTalkButton = (Button) findViewById(R.id.shareBtn);
 
-        ReminderButton.setOnClickListener(new View.OnClickListener()
-        {
+        ReminderButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v)
-            {
-                Intent intent = new Intent (HomeActivity.this, ReminderActivity.class);
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeActivity.this, ReminderActivity.class);
                 startActivity(intent);
-
             }
-        } );
+        });
 
-        TimerButton.setOnClickListener((new View.OnClickListener()
-        {
+        TimerButton.setOnClickListener((new View.OnClickListener() {
             @Override
-            public void onClick(View v)
-            {
-                Intent intent1= new Intent (HomeActivity.this, TimerActivity.class);
+            public void onClick(View v) {
+                Intent intent1 = new Intent(HomeActivity.this, TimerActivity.class);
                 startActivity(intent1);
                 //To change body of implemented methods use File | Settings | File Templates.
             }
         }));
-        AboutButton.setOnClickListener(new View.OnClickListener()
-        {
+        AboutButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v)
-            {
-                Intent intent = new Intent (HomeActivity.this, AboutActivity.class);
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeActivity.this, AboutActivity.class);
                 startActivity(intent);
-
             }
-        } );
+        });
 
-        NoteButton.setOnClickListener((new View.OnClickListener()
-        {
+        NoteButton.setOnClickListener((new View.OnClickListener() {
             @Override
-            public void onClick(View v)
-            {
-                Intent intent1= new Intent (HomeActivity.this, NotesActivity.class);
+            public void onClick(View v) {
+                Intent intent1 = new Intent(HomeActivity.this, NotesActivity.class);
                 startActivity(intent1);
                 //To change body of implemented methods use File | Settings | File Templates.
             }
         }));
-        PeerTalkButton.setOnClickListener(new View.OnClickListener()
-        {
+        PeerTalkButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v)
-            {
-                Intent intent = new Intent (HomeActivity.this, PeerTalkActivity.class);
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeActivity.this, PeerTalkActivity.class);
                 startActivity(intent);
-
             }
-        } );
-
-
+        });
     }
-
-
-
-    }
+}
 
