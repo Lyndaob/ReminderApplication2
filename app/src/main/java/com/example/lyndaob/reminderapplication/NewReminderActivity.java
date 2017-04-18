@@ -9,9 +9,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
-import android.widget.Toast;
 
-import com.example.lyndaob.reminderapplication.databinding.ReminderBinding;
+import com.example.lyndaob.reminderapplication.databinding.NewReminderBinding;
 import com.example.lyndaob.reminderapplication.models.Reminder;
 
 import java.util.Calendar;
@@ -20,39 +19,34 @@ import java.util.Map;
 
 public class NewReminderActivity extends BaseActivity implements DatePickerDialog.OnDateSetListener {
 
-    private ReminderBinding reminderBinding;
+    private NewReminderBinding newReminderBinding;
     private DatabaseReference database;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        reminderBinding = DataBindingUtil.setContentView(this, R.layout.reminder);
+        newReminderBinding = DataBindingUtil.setContentView(this, R.layout.new_reminder);
         database = FirebaseDatabase.getInstance().getReference();
+
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         String[] items = getResources().getStringArray(R.array.reminder_categories);
         ArrayAdapter<String> reminderCategoryAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, items);
-        reminderBinding.category.setAdapter(reminderCategoryAdapter);
+        newReminderBinding.category.setAdapter(reminderCategoryAdapter);
         String[] repeatSettings = getResources().getStringArray(R.array.repeat_settings);
         ArrayAdapter<String> repeatSettingsAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, repeatSettings);
-        reminderBinding.repeat.setAdapter(repeatSettingsAdapter);
+        newReminderBinding.repeat.setAdapter(repeatSettingsAdapter);
     }
 
-    @Override
-    public boolean onSupportNavigateUp() {
-        onBackPressed();
-        return true;
-    }
 
     public void onDueDateClick(View view) {
         final Calendar calendar = Calendar.getInstance();
         int currentYear = calendar.get(Calendar.YEAR);
         int currentMonth = calendar.get(Calendar.MONTH);
         int currentDay = calendar.get(Calendar.DAY_OF_MONTH);
-        if (!reminderBinding.dueDate.getText().toString().isEmpty()) {
-            String[] dateParts = reminderBinding.dueDate.getText().toString().split("-");
+        if (!newReminderBinding.dueDate.getText().toString().isEmpty()) {
+            String[] dateParts = newReminderBinding.dueDate.getText().toString().split("-");
             currentYear = Integer.parseInt(dateParts[0]);
             currentMonth = Integer.parseInt(dateParts[1]) - 1;
             currentDay = Integer.parseInt(dateParts[2]);
@@ -63,11 +57,11 @@ public class NewReminderActivity extends BaseActivity implements DatePickerDialo
     }
 
     public void onSaveButtonClick(View view) {
-        final String title = reminderBinding.title.getText().toString();
-        final String repeatSetting = reminderBinding.repeat.getSelectedItem().toString();
-        final String category = reminderBinding.category.getSelectedItem().toString();
-        final boolean alarm = reminderBinding.alarm.isChecked();
-        final String dueDate = reminderBinding.dueDate.getText().toString();
+        final String title = newReminderBinding.title.getText().toString();
+        final String repeatSetting = newReminderBinding.repeat.getSelectedItem().toString();
+        final String category = newReminderBinding.category.getSelectedItem().toString();
+        final boolean alarm = newReminderBinding.alarm.isChecked();
+        final String dueDate = newReminderBinding.dueDate.getText().toString();
         Reminder reminder = new Reminder(title, category, dueDate, alarm, repeatSetting);
         addReminder(reminder);
     }
@@ -84,6 +78,6 @@ public class NewReminderActivity extends BaseActivity implements DatePickerDialo
 
     @Override
     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-        reminderBinding.dueDate.setText(year + "-" + (month + 1) + "-" + dayOfMonth);
+        newReminderBinding.dueDate.setText(year + "-" + (month + 1) + "-" + dayOfMonth);
     }
 }

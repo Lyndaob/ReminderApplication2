@@ -100,6 +100,10 @@ public abstract class BaseActivity extends AppCompatActivity implements GoogleAp
                             }
                         });
                 break;
+            case android.R.id.home:
+                onBackPressed();
+                break;
+            default:
         }
         return true;
     }

@@ -28,4 +28,6 @@
         <item>YEARLY</item>
         <item>NONE</item>
     </string-array>
+    <string name="off">Off</string>
+    <string name="on">On</string>
 </resources>

@@ -3,8 +3,8 @@
           package="com.example.lyndaob.reminderapplication">
 
     <uses-permission android:name="android.permission.INTERNET"/>
-    <application
 
+    <application
             android:allowBackup="true"
             android:icon="@mipmap/ic_launcher"
             android:label="@string/app_name"
@@ -17,17 +17,19 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".LoginActivity"
-                />
+        <activity android:name=".LoginActivity"/>
         <activity android:name=".RegistrationActivity"/>
         <activity android:name=".NotesActivity"/>
         <activity android:name=".AboutActivity"/>
         <activity android:name=".HomeActivity"/>
-        <activity android:name=".NewReminderActivity" android:label="@string/reminder" />
+        <activity
+                android:name=".NewReminderActivity"
+                android:label="@string/reminder"/>
         <activity android:name=".TimerActivity"/>
         <activity android:name=".PeerTalkActivity"/>
         <activity android:name=".CategoryActivity"/>
-
+        <activity android:name=".ReminderActivity">
+        </activity>
     </application>
 
 </manifest>

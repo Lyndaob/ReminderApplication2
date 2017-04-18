@@ -12,7 +12,7 @@ import java.util.HashMap;
 @IgnoreExtraProperties
 public class Reminder {
 
-    public Boolean alarm;
+    public boolean alarm;
     public String category;
     public String dueDate;
     public String repeat;
@@ -21,7 +21,7 @@ public class Reminder {
     public Reminder() {
     }
 
-    public Reminder(String title, String category, String dueDate, Boolean alarm, String repeat) {
+    public Reminder(String title, String category, String dueDate, boolean alarm, String repeat) {
         this.alarm = alarm;
         this.category = category;
         this.dueDate = dueDate;
