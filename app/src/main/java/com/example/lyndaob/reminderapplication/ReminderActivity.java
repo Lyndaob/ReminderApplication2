@@ -1,24 +1,40 @@
 package com.example.lyndaob.reminderapplication;
 
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.widget.ArrayAdapter;
-import android.widget.Spinner;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
-public class ReminderActivity extends AppCompatActivity {
+import android.content.Intent;
+import android.databinding.DataBindingUtil;
+import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.view.View;
+
+import com.example.lyndaob.reminderapplication.adapter.ReminderListAdapter;
+import com.example.lyndaob.reminderapplication.databinding.ActivityReminderBinding;
+import com.example.lyndaob.reminderapplication.models.Reminder;
+
+public class ReminderActivity extends BaseActivity {
+    ActivityReminderBinding viewBinding;
+    ReminderListAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.reminder);
-        Spinner dropdown = (Spinner)findViewById(R.id.spinner1);
-        String[] items = new String[]{"BIRTHDAYS", "ANNIVERSARIES", "SHOPPING", "SCHOOL", "WORK", "OTHERS"};
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, items);
-        dropdown.setAdapter(adapter);
+        viewBinding = DataBindingUtil.setContentView(this, R.layout.activity_reminder);
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        Spinner dropdown1 = (Spinner)findViewById(R.id.spinner);
-        String[] repeat = new String[]{"HOURLY", "WEEKLY", "DAILY", "MONTHLY", "YEARLY", "NEVER"};
-        ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, items);
-        dropdown.setAdapter(adapter);
+        viewBinding.rvReminders.setHasFixedSize(false);
+        viewBinding.rvReminders.setLayoutManager(new LinearLayoutManager(this));
+
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("reminders");
+        adapter = new ReminderListAdapter(Reminder.class, R.layout.reminder_list_item, ReminderListAdapter.ViewHolder.class, database);
+
+        viewBinding.rvReminders.setAdapter(adapter);
     }
+
+    public void onNewButtonClick(View view) {
+        startActivity(new Intent(this, NewReminderActivity.class));
+    }
+
 }

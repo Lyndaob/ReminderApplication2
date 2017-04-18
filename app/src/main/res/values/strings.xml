@@ -1,8 +1,33 @@
 <resources>
-    <string name="app_name">ReminderApplication</string>
+    <string name="app_name">Reminders</string>
     <string name="sign_in_cancelled">Sign in cancelled</string>
     <string name="no_internet_connection">No internet connection</string>
     <string name="unknown_error">Unknown error</string>
     <string name="unknown_sign_in_response">Unknown sign in response</string>
     <string name="sign_out">Sign out</string>
+    <string name="reminder">Reminder</string>
+    <string name="reminder_title">Reminder Title</string>
+    <string name="repeat">Repeat</string>
+    <string name="enable_alarm">Enable Alarm</string>
+    <string name="due_date">Due Date</string>
+    <string name="reminder_about">Reminder About</string>
+    <string name="save">save</string>
+    <string-array name="reminder_categories">
+        <item>BIRTHDAYS</item>
+        <item>ANNIVERSARIES</item>
+        <item>SHOPPING</item>
+        <item>SCHOOL</item>
+        <item>WORK</item>
+        <item>OTHERS</item>
+    </string-array>
+    <string-array name="repeat_settings">
+        <item>HOURLY</item>
+        <item>WEEKLY</item>
+        <item>DAILY</item>
+        <item>MONTHLY</item>
+        <item>YEARLY</item>
+        <item>NONE</item>
+    </string-array>
+    <string name="off">Off</string>
+    <string name="on">On</string>
 </resources>
