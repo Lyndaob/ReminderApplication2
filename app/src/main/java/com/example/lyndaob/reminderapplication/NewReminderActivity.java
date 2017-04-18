@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
+import android.widget.Toast;
 
 import com.example.lyndaob.reminderapplication.databinding.NewReminderBinding;
 import com.example.lyndaob.reminderapplication.models.Reminder;
@@ -74,6 +75,8 @@ public class NewReminderActivity extends BaseActivity implements DatePickerDialo
         childUpdates.put("/reminders/" + key, values);
         childUpdates.put("/user-reminders/" + getFirebaseUserId() + "/" + key, values);
         database.updateChildren(childUpdates);
+        Toast.makeText(this, R.string.reminder_saved, Toast.LENGTH_SHORT).show();
+        finish();
     }
 
     @Override

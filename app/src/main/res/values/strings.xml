@@ -30,4 +30,5 @@
     </string-array>
     <string name="off">Off</string>
     <string name="on">On</string>
+    <string name="reminder_saved">Reminder Saved</string>
 </resources>

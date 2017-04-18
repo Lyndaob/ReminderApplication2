@@ -44,7 +44,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
             Intent intent = new Intent(this, HomeActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
-            return;
+            finish();
         }
         firebaseAuth.addAuthStateListener(this);
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -114,6 +114,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
             Intent intent = new Intent(this, HomeActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
+            finish();
         }
     }
 }
