@@ -21,7 +21,7 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
         android:layout_marginTop="126dp"
-        android:id="@+id/editText4"
+        android:id="@+id/name"
         android:hint="NAME" />
 
     <EditText
@@ -29,9 +29,10 @@
         android:layout_height="wrap_content"
         android:inputType="textEmailAddress"
         android:ems="10"
-        android:id="@+id/editText5"
+        android:id="@+id/email"
         android:hint="EMAIL"
-        android:layout_below="@+id/editText4"
+
+        android:layout_below="@+id/name"
         android:layout_alignParentStart="true" />
 
     <EditText
@@ -39,9 +40,9 @@
         android:layout_height="wrap_content"
         android:inputType="phone"
         android:ems="10"
-        android:id="@+id/editText6"
+        android:id="@+id/phone"
         android:hint="PHONE NUMBER"
-        android:layout_below="@+id/editText5"
+        android:layout_below="@+id/email"
         android:layout_alignParentStart="true" />
 
     <EditText
@@ -49,9 +50,9 @@
         android:layout_height="wrap_content"
         android:inputType="textPassword"
         android:ems="10"
-        android:id="@+id/editText7"
+        android:id="@+id/password"
         android:hint="PASSWORD"
-        android:layout_below="@+id/editText6"
+        android:layout_below="@+id/phone"
         android:layout_alignParentStart="true" />
 
     <EditText
@@ -59,9 +60,9 @@
         android:layout_height="wrap_content"
         android:inputType="textPassword"
         android:ems="10"
-        android:id="@+id/editText8"
+        android:id="@+id/confirm_password"
         android:hint="CONFIRM PASSWORD"
-        android:layout_below="@+id/editText7"
+        android:layout_below="@+id/password"
         android:layout_alignParentStart="true" />
 
     <ImageView
@@ -77,8 +78,8 @@
         android:text="REGISTER"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/button2"
-        android:layout_below="@+id/editText8"
+        android:id="@+id/register_btn"
+        android:layout_below="@+id/confirm_password"
         android:layout_alignEnd="@+id/imageView3"
         android:layout_marginEnd="66dp" />
 
