@@ -59,7 +59,6 @@ public abstract class BaseActivity extends AppCompatActivity implements GoogleAp
                 FirebaseUser user = firebaseAuth.getCurrentUser();
                 if (user == null) {
                     Log.d(this.getClass().getName(), "onAuthStateChanged:signed_out");
-//                    mFirebaseAuth.signOut();
                     Intent intent = new Intent(BaseActivity.this, LoginActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);

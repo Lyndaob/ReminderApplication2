@@ -31,4 +31,15 @@
     <string name="off">Off</string>
     <string name="on">On</string>
     <string name="reminder_saved">Reminder Saved</string>
+    <string name="register_link_text">Don\'t have account? Register</string>
+    <string name="auth_failed">Authentication failed</string>
+    <string name="registration_failed">Registration Failed</string>
+    <string name="register">REGISTER</string>
+    <string name="name">Name</string>
+    <string name="email">Email</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="login">Login</string>
+    <string name="or">or</string>
 </resources>
